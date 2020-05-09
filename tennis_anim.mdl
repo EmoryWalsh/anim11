@@ -1,0 +1,182 @@
+frames 80
+basename tennis
+constants shiny_black 0.1 0.1 0.3 0.1 0.1 0.3 0.1 0.1 0.3
+constants shiny_blue 0.3 0.1 0.4 0.5 0.1 0.7 0.3 0.8 0.2
+constants shiny 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9 0.9
+constants tennis_green 0.16 0.4 0.64 0.2 0.5 0.8 0 0 0
+constants black 0 0 0 0 0 0 0 0 0
+
+//ball
+push
+move -250 0 0 ballmove
+sphere tennis_green 450 300 0 20
+vary ballmove 0 39 0 1
+vary ballmove 40 79 1 0
+pop
+
+//racket
+push
+move 0 0 50
+move 100 0 0 racketmove
+rotate y -100 racketspin
+push
+move 0 0 -50
+vary racketspin 0 79 0 1
+vary racketmove 0 79 0 1
+push
+move 50 300 0
+rotate x -85
+rotate y 80
+push
+rotate x 90
+torus shiny_blue 0 0 0 5 100
+pop
+box shiny_black -100 0 0 200 1 1
+push
+move 0 10 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 20 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 30 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 40 0
+box shiny_black -90 0 0 180 1 1
+pop
+push
+move 0 50 0
+box shiny_black -90 0 0 180 1 1
+pop
+push
+move 0 60 0
+box shiny_black -80 0 0 160 1 1
+pop
+push
+move 0 70 0
+box shiny_black -75 0 0 150 1 1
+pop
+push
+move 0 80 0
+box shiny_black -65 0 0 130 1 1
+pop
+push
+move 0 -10 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 -20 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 -30 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 -40 0
+box shiny_black -90 0 0 180 1 1
+pop
+push
+move 0 -50 0
+box shiny_black -90 0 0 180 1 1
+pop
+push
+move 0 -60 0
+box shiny_black -80 0 0 160 1 1
+pop
+push
+move 0 -70 0
+box shiny_black -75 0 0 150 1 1
+pop
+push
+move 0 -80 0
+box shiny_black -65 0 0 130 1 1
+pop
+push
+rotate z 90
+box shiny_black -100 0 0 200 1 1
+push
+move 0 10 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 20 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 30 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 40 0
+box shiny_black -90 0 0 180 1 1
+pop
+push
+move 0 50 0
+box shiny_black -90 0 0 180 1 1
+pop
+push
+move 0 60 0
+box shiny_black -80 0 0 160 1 1
+pop
+push
+move 0 70 0
+box shiny_black -75 0 0 150 1 1
+pop
+push
+move 0 80 0
+box shiny_black -65 0 0 130 1 1
+pop
+push
+move 0 -10 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 -20 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 -30 0
+box shiny_black -100 0 0 200 1 1
+pop
+push
+move 0 -40 0
+box shiny_black -90 0 0 180 1 1
+pop
+push
+move 0 -50 0
+box shiny_black -90 0 0 180 1 1
+pop
+push
+move 0 -60 0
+box shiny_black -80 0 0 160 1 1
+pop
+push
+move 0 -70 0
+box shiny_black -75 0 0 150 1 1
+pop
+push
+move 0 -80 0
+box shiny_black -65 0 0 130 1 1
+pop
+pop
+push
+move 0 -100 0
+push
+move -60 15 0
+rotate z 30
+box shiny_blue 0 0 0 10 110 10
+pop
+push
+move 60 15 0
+rotate z -30
+box shiny_blue -10 0 0 10 110 10
+pop
+push
+move 0 0 1
+box shiny_black -5 -70 0 10 100 10
+save tennis.png
