@@ -150,34 +150,42 @@ def add_star(polygons, cx, cy, cz, ro, ri):
     s2 = (.25 * math.sqrt(10 - 2 * math.sqrt(5)))
     c1 = (.25 * (math.sqrt(5) - 1))
     c2 = (.25 * (math.sqrt(5) + 1))
-    print(s1)
-    print(s2)
-    print(c1)
-    print(c2)
 
-    hp1 = [cx, cy +ri]
-    hp2 = [cx + s1 * ri, cy + c1 * ri]
-    hp3 = [cx + s2 * ri, cy + -1 * c2 * ri]
-    hp4 = [cx + -1 * s2 * ri, cy + -1 * c2 * ri]
-    hp5 = [cx + -1 * s1 * ri, cy + c1 * ri]
+    ip1 = [cx, cy + ri]
+    ip2 = [cx + s1 * ri, cy + c1 * ri]
+    ip3 = [cx + s2 * ri, cy + -1 * c2 * ri]
+    ip4 = [cx + -1 * s2 * ri, cy + -1 * c2 * ri]
+    ip5 = [cx + -1 * s1 * ri, cy + c1 * ri]
 
-    print(hp1)
-    print(hp2)
-    print(hp3)
-    print(hp4)
-    print(hp5)
+    op1 = [cx + s2 * ro, cy + c2 * ro]
+    op2 = [cx + s1 * ro, cy - c1 * ro]
+    op3 = [cx, cy - ro]
+    op4 = [cx + -1 * s1 * ro, cy - c1 * ro]
+    op5 = [cx + -1 * s2 * ro, cy + c2 * ro]
 
-    op1 = [cx, cy + ri]
-    op2 = [cx + s1 * ri, cy + c1 * ri]
-    op3 = [cx + s2 * ri, cy + -c2 * ri]
-    op4 = [cx + -s2 * ri, cy + -c2 * ri]
-    op5 = [cx + -s1 * ri, cy + c1 * ri]
+    add_polygon(polygons, cx, cy, cz, op1[0], op1[1], cz, ip1[0], ip1[1], cz)
+    add_polygon(polygons, cx, cy, cz, ip2[0], ip2[1], cz, op1[0], op1[1], cz)
 
-    add_polygon(polygons, cx, cy, cz, hp2[0], hp2[1], cz,  hp1[0], hp1[1], cz)
-    add_polygon(polygons, cx, cy, cz, hp3[0], hp3[1], cz,  hp2[0], hp2[1], cz)
-    add_polygon(polygons, cx, cy, cz, hp4[0], hp4[1], cz,  hp3[0], hp3[1], cz)
-    add_polygon(polygons, cx, cy, cz, hp5[0], hp5[1], cz,  hp4[0], hp4[1], cz)
-    add_polygon(polygons, cx, cy, cz, hp1[0], hp1[1], cz,  hp5[0], hp5[1], cz)
+    add_polygon(polygons, cx, cy, cz, op2[0], op2[1], cz, ip2[0], ip2[1], cz)
+    add_polygon(polygons, cx, cy, cz, ip3[0], ip3[1], cz, op2[0], op2[1], cz)
+
+    add_polygon(polygons, cx, cy, cz, op3[0], op3[1], cz, ip3[0], ip3[1], cz)
+    add_polygon(polygons, cx, cy, cz, ip4[0], ip4[1], cz, op3[0], op3[1], cz)
+
+    add_polygon(polygons, cx, cy, cz, op3[0], op3[1], cz, ip3[0], ip3[1], cz)
+    add_polygon(polygons, cx, cy, cz, ip4[0], ip4[1], cz, op3[0], op3[1], cz)
+
+    add_polygon(polygons, cx, cy, cz, op4[0], op4[1], cz, ip4[0], ip4[1], cz)
+    add_polygon(polygons, cx, cy, cz, ip5[0], ip5[1], cz, op4[0], op4[1], cz)
+
+    add_polygon(polygons, cx, cy, cz, op5[0], op5[1], cz, ip5[0], ip5[1], cz)
+    add_polygon(polygons, cx, cy, cz, ip1[0], ip1[1], cz, op5[0], op5[1], cz)
+
+    #add_polygon(polygons, cx, cy, cz, hp2[0], hp2[1], cz,  hp1[0], hp1[1], cz)
+    #add_polygon(polygons, cx, cy, cz, hp3[0], hp3[1], cz,  hp2[0], hp2[1], cz)
+    #add_polygon(polygons, cx, cy, cz, hp4[0], hp4[1], cz,  hp3[0], hp3[1], cz)
+    #add_polygon(polygons, cx, cy, cz, hp5[0], hp5[1], cz,  hp4[0], hp4[1], cz)
+    #add_polygon(polygons, cx, cy, cz, hp1[0], hp1[1], cz,  hp5[0], hp5[1], cz)*/
 
 
 def add_sphere(polygons, cx, cy, cz, r, step ):
