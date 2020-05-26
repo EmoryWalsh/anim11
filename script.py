@@ -117,7 +117,7 @@ def run(filename):
 
     (name, num_frames) = first_pass(commands)
     frames = second_pass(commands, num_frames)
-    #print(frames)
+    print(frames)
 
     cur_frame = 0
     while(cur_frame < num_frames):
@@ -216,7 +216,7 @@ def run(filename):
             elif c == 'display':
                 display(screen)
             elif c == 'save':
-                save_extension(screen, args[0] + ".png")
+                save_extension(screen, args[0])
             # end operation loop
 
         cur_frame += 1
