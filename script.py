@@ -136,7 +136,6 @@ def run(filename):
         coords1 = []
 
         for command in commands:
-            #print(command)
             c = command['op']
             args = command['args']
             knob_value = 1
