@@ -136,7 +136,7 @@ def run(filename):
         coords1 = []
 
         for command in commands:
-            #print(command)
+            print(command)
             c = command['op']
             args = command['args']
             knob_value = 1
@@ -149,7 +149,23 @@ def run(filename):
                         args[3], args[4], args[5])
                 matrix_mult( stack[-1], tmp )
                 draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect)
+                print tmp
                 tmp = []
+                reflect = '.white'
+            elif c == 'star':
+                if command['constants']:
+                    reflect = command['constants']
+                add_star(tmp,
+                         args[0], args[1], args[2],
+                         args[3], args[4])
+                matrix_mult( stack[-1], tmp )
+                print("Added star")
+                print tmp
+                draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect)
+                tmp = []
+                print('drew star')
+                add_polygon(tmp, 10, 30, 40, 20, 40, 50, 40 , 20 ,40)
+                draw_polygons(tmp, screen, zbuffer, view, ambient, light, symbols, reflect)
                 reflect = '.white'
             elif c == 'sphere':
                 if command['constants']:

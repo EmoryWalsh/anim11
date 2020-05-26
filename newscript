@@ -1,0 +1,4 @@
+push
+star 300 200 40 40 30
+//box 200 200 10 30 30 30
+save new.png
